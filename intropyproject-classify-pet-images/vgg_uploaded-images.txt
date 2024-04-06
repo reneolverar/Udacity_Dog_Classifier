@@ -1,0 +1,51 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                    Frog_02.jpg  label:                       frog
+ 2 key:               Pekingese_01.jpg  label:                  pekingese
+ 3 key:               Pekingese_04.jpg  label:                  pekingese
+ 4 key:                 Pet_Toy_03.jpg  label:                    pet toy
+
+     MATCH:
+
+                   Frog_02.jpg: 
+Real:                       frog   Classifier:           tree frog, tree-frog  
+PetLabelDog: 0  ClassLabelDog: 0
+
+              Pekingese_01.jpg: 
+Real:                  pekingese   Classifier:      pekinese, pekingese, peke  
+PetLabelDog: 1  ClassLabelDog: 1
+
+              Pekingese_04.jpg: 
+Real:                  pekingese   Classifier:      pekinese, pekingese, peke  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+                Pet_Toy_03.jpg: 
+Real:                    pet toy   Classifier: maltese dog, maltese terrier, maltese  
+PetLabelDog: 0  ClassLabelDog: 1
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+
+*** Results for Dog Breed Classification with CNN Model Architecture: vgg ***
+
+ - Number of Images: 4
+ - Number of Dog Images: 2
+ - Number of 'Not-a' Dog Images: 2
+
+Percentage calculations:
+ - pct_match: 75.0%
+ - pct_correct_dogs: 100.0%
+ - pct_correct_breed: 100.0%
+ - pct_correct_notdogs: 50.0%
+
+INCORRECT Dog/NOT-Dog Assignments:
+Real: pet toy   Classifier: maltese dog, maltese terrier, maltese
+
+** Total Elapsed Runtime: 0:0:1
