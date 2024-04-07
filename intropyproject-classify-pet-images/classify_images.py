@@ -74,7 +74,5 @@ def classify_images(images_dir, results_dic, model):
         classifier_label = classifier(os.path.join(images_dir,  key), model).lower().strip()
 
         # Compare pet label and classifier labels
-        if pet_label in classifier_label:
-            value.extend([classifier_label, 1])
-        else:
-            value.extend([classifier_label, 0])
+        match = int(pet_label in classifier_label)
+        value.extend([classifier_label, match])
