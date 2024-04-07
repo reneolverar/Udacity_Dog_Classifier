@@ -77,7 +77,7 @@ def main():
     classify_images(in_arg.dir, results, in_arg.arch)
 
     # Function that checks Results Dictionary using results
-    # check_classifying_images(results)
+    check_classifying_images(results)
 
 
     # TODO 4: Define adjust_results4_isadog function within the file adjust_results4_isadog.py
@@ -103,7 +103,7 @@ def main():
     results_stats = calculates_results_stats(results)
 
     # Function that checks Results Statistics Dictionary using results_stats
-    # check_calculating_results(results, results_stats)
+    check_calculating_results(results, results_stats)
 
 
     # TODO 6: Define print_results function within the file print_results.py
