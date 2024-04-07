@@ -46,6 +46,10 @@ def get_pet_labels(image_dir):
     file_list = listdir(image_dir)
 
     for file_name in file_list:
+        # Skip files that start with "."
+        if file_name.startswith("."):
+            continue
+        
         # Retrieve the pet label from the filename, make it lower case, remove whitespaces and join with " "
         pet_label = " ".join(file_name.split("_")[:-1]).lower().strip()
 
