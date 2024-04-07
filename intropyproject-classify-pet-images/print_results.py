@@ -68,21 +68,21 @@ def print_results(results_dic, results_stats_dic, model,
     print(f" - Number of 'Not-a' Dog Images: {results_stats_dic['n_notdogs_img']}")
 
     print(f"\nPercentage calculations:")
-    for key in results_stats_dic:
+    for key, value in results_stats_dic.items():
         if 'pct' in key:
-            print(f" - {key}: {results_stats_dic[key]}%")
+            print(f" - {key}: {value}%")
 
     # Print Incorrect Dogs
     if print_incorrect_dogs and (results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] != results_stats_dic['n_images']):
         print("\nINCORRECT Dog/NOT-Dog Assignments:")
-        for key in results_dic:
-            if sum(results_dic[key][3:]) == 1:
-                print(f"Real: {results_dic[key][0]}   Classifier: {results_dic[key][1]}")
+        for value in results_dic.values():
+            if sum(value[3:]) == 1:
+                print(f"Real: {value[0]}   Classifier: {value[1]}")
 
     # Print Incorrect Breeds
     if print_incorrect_breed and (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
         print("\nINCORRECT Dog Breed Assignments:")
-        for key in results_dic:
-            if sum(results_dic[key][3:]) == 2 and results_dic[key][2] == 0:
-                print(f"Real: {results_dic[key][0]}   Classifier: {results_dic[key][1]}")
+        for value in results_dic.values():
+            if sum(value[3:]) == 2 and value[2] == 0:
+                print(f"Real: {value[0]}   Classifier: {value[1]}")
 

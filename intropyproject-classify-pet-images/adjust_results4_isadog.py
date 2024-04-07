@@ -79,7 +79,7 @@ def adjust_results4_isadog(results_dic, dogfile):
                 # else:
                     # print("** Warning: Key=", name, "already exists in dog_names with value=", dog_names[name])
 
-    for key, value in results_dic.items():
+    for value in results_dic.values():
         pet_label = value[0]
         classifier_label = value[1].split(", ")
         # Check if pet image label is a dog
@@ -88,4 +88,4 @@ def adjust_results4_isadog(results_dic, dogfile):
         # Check if classifier label is a dog
         classified_as_dog = int(any(label in dog_names for label in classifier_label))
         # Extend the results_dic list with is_dog and classified_as_dog
-        results_dic[key].extend([is_dog, classified_as_dog])
+        value.extend([is_dog, classified_as_dog])

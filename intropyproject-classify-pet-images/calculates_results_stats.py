@@ -80,28 +80,28 @@ def calculates_results_stats(results_dic):
     n_correct_notdogs = 0
     n_correct_breed = 0
 
-    for key in results_dic:
+    for value in results_dic.values():
         # Count the number of dog images
-        if results_dic[key][3] == 1:
+        if value[3] == 1:
             n_dogs_img += 1
         # Count the number of non-dog images
         else:
             n_notdogs_img += 1
 
         # Count the number of matches between pet and classifier labels
-        if results_dic[key][2] == 1:
+        if value[2] == 1:
             n_match += 1
 
         # Count the number of correctly classified dog images
-        if results_dic[key][3] == 1 and results_dic[key][4] == 1:
+        if value[3] == 1 and value[4] == 1:
             n_correct_dogs += 1
 
         # Count the number of correctly classified non-dog images
-        if results_dic[key][3] == 0 and results_dic[key][4] == 0:
+        if value[3] == 0 and value[4] == 0:
             n_correct_notdogs += 1
 
         # Count the number of correctly classified dog breeds
-        if results_dic[key][3] == 1 and results_dic[key][2] == 1:
+        if value[3] == 1 and value[2] == 1:
             n_correct_breed += 1
 
     # Calculate the percentages
